@@ -27,13 +27,35 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #1a1a1a, #2d2d2d);
+    min-height: 100vh;
   }
 
   .glass-card {
-    @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-lg;
+    @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-lg hover:border-white/20 transition-all duration-300;
   }
 }
 
 .gradient-text {
   @apply bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent;
+}
+
+.hero-gradient {
+  background: linear-gradient(225deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
